@@ -35,14 +35,14 @@ namespace AdminTixketID
         public string NamaBioskop { get { return namaBioskopText.Text; } set { namaBioskopVar = value; namaBioskopText.Text = value; } }
         [Category("Custom Property")]
         public string LokasiBioskop { get { return lokasiBioskopText.Text; } set { lokasiBioskopVar = value; lokasiBioskopText.Text = value; } }
-        [Category("Custom Property")]
+        
         public int Harga { get { return int.Parse(hargaText.Text); } set { hargaVar = value; hargaText.Text = value.ToString(); } }
         [Category("Custom Property")]
         public int Durasi { get { return int.Parse(durasiText.Text); } set { durasiVar = value; durasiText.Text = value.ToString(); } }
         [Category("Custom Property")]
         public DateTime JadwalTimePicker { get { return jadwalTimePicker.Value; } set { jadwalTimePickerVar = value; jadwalTimePicker.Value = value; } }
         [Category("Custom Property")]
-        public Image Gambar { get { return gambarVar; } set { gambarVar = value; gambarBox.Image = value; } }
+        public Image Gambar { get { return gambarBox.Image; } set { gambarVar = value; gambarBox.Image = value; } }
         [Category("Custom Property")]
         public string Sinopsis { get { return sinopsisText.Text; } set { sinopsisVar = value; sinopsisText.Text = value; } }
         
@@ -85,7 +85,7 @@ namespace AdminTixketID
 
         private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -93,7 +93,7 @@ namespace AdminTixketID
 
         private void textBox6_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
